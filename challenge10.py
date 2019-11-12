@@ -47,7 +47,9 @@ def aes_decrypt_cbc(cipher, key, iv):
 		text += xor_byte(aes.decrypt(block), prev_text)
 		prev_text = block
 	
-	return text[0 : len(text) - text[-1]]
+	if text[-text[-1]:] == bytes([text[-1]]) * text[-1]:
+		return text[0 : len(text) - text[-1]]
+	return text
 
 def aes_decrypt_cbc2(cipher, key, iv):
 	aes = AES.new(key, AES.MODE_CBC, iv)
