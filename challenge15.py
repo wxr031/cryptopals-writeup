@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-from Crypto.Cipher import AES
-
 def pkcs7_validation(text):
 	if isinstance(text, str):
 		text = text.encode()
