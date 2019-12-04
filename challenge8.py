@@ -17,4 +17,3 @@ if __name__ == '__main__':
 	
 	cipher = detect_ecb(ciphers)
 	print(cipher)
-	

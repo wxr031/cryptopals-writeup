@@ -8,7 +8,7 @@ from Crypto.Cipher import AES
 key = os.urandom(16)
 
 def parsing_routine(string):
-	items = (item.split(b'=') for item in string.split(b'&'))
+	items = [item.split(b'=') for item in string.split(b'&')]
 	return {key: value for key, value in items}
 
 def profile_for(email):
